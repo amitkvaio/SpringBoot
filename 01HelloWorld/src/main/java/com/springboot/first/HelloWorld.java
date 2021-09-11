@@ -13,7 +13,7 @@ public class HelloWorld {
 		System.out.println("Hello World!!");
 		
 		String[] beanNames = ctx.getBeanDefinitionNames();
-        
+        System.out.println("List of beans names:");
         //Arrays.sort(beanNames);
  
         for (String beanName : beanNames) {
@@ -21,3 +21,7 @@ public class HelloWorld {
         }
 	}
 }
+
+/*
+@SpringBootApplication annotation, means this is the starting point for our Spring Boot application
+*/

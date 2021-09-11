@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//@RequestMapping(value="simple")
+@RequestMapping(value="simple")
 public class SpringBootController {
 	@RequestMapping( value="/",method=RequestMethod.GET)
 	public ResponseEntity<String> welcome(){
@@ -25,3 +25,8 @@ public class SpringBootController {
 		return 100+200;
 	}
 }
+
+/*
+My rest class is annotated with @RestController, which tells Spring Boot to consider this class as REST controller and register 
+@RequestMapping paths inside it to respond to the HTTP requests.
+*/

@@ -53,4 +53,26 @@ public class SpringBootDAO {
 		return totalCount;
 	}
 	
+	/*
+	Table creation query
+	SHOW DATABASES;
+	create database amitdb;
+	use amitdb;
+	show tables;
+	CREATE TABLE Employee (
+			FIRSTNAME VARCHAR(30) NOT NULL,
+			LASTNAME VARCHAR(30) NOT NULL,
+			AGE int(2),
+			EMPLOYEEID int(6)
+			);
+            
+            
+	desc Employee;
+	insert into Employee values("amit","kumar",31,1030);
+	insert into Employee values("Niraj","kumar",27,1025);
+
+	alter table Employee modify EMPLOYEEID NUMERIC;
+	
+	*/
+	
 }	
