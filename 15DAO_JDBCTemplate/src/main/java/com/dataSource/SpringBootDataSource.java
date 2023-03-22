@@ -10,3 +10,13 @@ public class SpringBootDataSource {
 		System.out.println("Server has been started successfyllt!!");
 	}
 }
+
+
+/*
+@SpringBootApplication
+	@Configuration : Allow us to register the bean or import additional configuration class
+	@EnableAutoConfiguration: Enable spring boot's auto-configuration features.
+	@ComponentScan :::Enables component scanning of the package specified
+			@ComponentScan("dav.school.service"):: default will be base package
+
+*/

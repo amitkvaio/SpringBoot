@@ -24,10 +24,16 @@ public class SpringBootThreadPoolConfiguration {
 	@Bean
 	public ThreadPoolTaskExecutor getDebitThreadPoolExecutor(){
 		ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+		//It is the minimum number of threads that remain active at any given point of time.
 		threadPoolTaskExecutor.setCorePoolSize(Integer.parseInt(debitThreadCorePoolSize));
+		
+		//It is the maximum number of threads that can be created. 
 		threadPoolTaskExecutor.setMaxPoolSize(Integer.parseInt(debitThreadMaxPoolSize));
+		
+		//QueueCapacity
 		threadPoolTaskExecutor.setQueueCapacity(Integer.parseInt(debitThreadQueueCapacity));
 		threadPoolTaskExecutor.setKeepAliveSeconds(Integer.parseInt(debitThreadTimeout));
+		threadPoolTaskExecutor.initialize();
 		return threadPoolTaskExecutor;
 	}
 	
@@ -38,6 +44,7 @@ public class SpringBootThreadPoolConfiguration {
 		threadPoolTaskExecutor.setMaxPoolSize(Integer.parseInt(creditThreadMaxPoolSize));
 		threadPoolTaskExecutor.setQueueCapacity(Integer.parseInt(creditThreadQueueCapacity));
 		threadPoolTaskExecutor.setKeepAliveSeconds(Integer.parseInt(creditThreadTimeout));
+		threadPoolTaskExecutor.initialize();
 		return threadPoolTaskExecutor;
 	}
 
@@ -105,3 +112,19 @@ public class SpringBootThreadPoolConfiguration {
 		this.creditThreadTimeout = creditThreadTimeout;
 	}
 }
+/*
+<dt>Keep-alive times</dt>
+*
+* <dd>If the pool currently has more than corePoolSize threads,
+* excess threads will be terminated if they have been idle for more
+* than the keepAliveTime (see {@link
+* ThreadPoolExecutor#getKeepAliveTime}). This provides a means of
+* reducing resource consumption when the pool is not being actively
+* used. If the pool becomes more active later, new threads will be
+* constructed. This parameter can also be changed dynamically
+* using method {@link ThreadPoolExecutor#setKeepAliveTime}. Using
+* a value of <tt>Long.MAX_VALUE</tt> {@link TimeUnit#NANOSECONDS}
+* effectively disables idle threads from ever terminating prior
+* to shut down.
+* </dd>
+*/

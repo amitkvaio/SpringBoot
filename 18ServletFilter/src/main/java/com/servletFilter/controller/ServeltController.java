@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServeltController {
 	@RequestMapping(value = "/filter")
 	public String filterHelloWorld() {
-		System.out.println("I am from filterHelloWorld of ServletController--");
+		System.out.println("-");
 		return "Filter Hello World";
 	}
 }

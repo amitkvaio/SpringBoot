@@ -34,6 +34,16 @@ public class CustomizedResponseEntityExceptionHandlerController extends Response
 		
 	}
 	
+	@ExceptionHandler(ArithmeticException.class)
+	public final ResponseEntity<Object> handleArithmeticException(ArithmeticException ex, WebRequest request) {
+		ExceptionResponse exceptionResponse = 
+					new ExceptionResponse(new Date(), ex.getMessage()+" AME", request.getDescription(false));
+	return	new ResponseEntity<>(exceptionResponse,HttpStatus.BAD_REQUEST);
+		
+	}
+	
+	
+	
 }
 
 /*

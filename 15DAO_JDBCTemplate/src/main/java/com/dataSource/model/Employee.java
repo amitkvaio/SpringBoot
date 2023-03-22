@@ -6,7 +6,7 @@ public class Employee{
 	private String firstName;
 	private String lastName;
 	private BigDecimal age;
-	private BigDecimal empId;
+	private BigDecimal empid;
 
 	public Employee() {
 		System.out.println("Emloyee Constructor");
@@ -16,7 +16,7 @@ public class Employee{
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.empId = empId;
+		this.empid = empId;
 	}
 
 	public String getFirstName() {
@@ -44,10 +44,10 @@ public class Employee{
 	}
 
 	public BigDecimal getEmpId() {
-		return empId;
+		return empid;
 	}
 
 	public void setEmpId(BigDecimal empId) {
-		this.empId = empId;
+		this.empid = empId;
 	}
 }

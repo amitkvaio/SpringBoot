@@ -13,7 +13,7 @@ public class EmployeeMapper extends Employee implements RowMapper<Employee> {
 		emp.setFirstName((String) rs.getString("FIRSTNAME"));
 		emp.setLastName((String) rs.getString("LASTNAME"));
 		emp.setAge(rs.getBigDecimal("AGE"));
-		emp.setEmpId(rs.getBigDecimal("EMPLOYEEID"));
+		emp.setEmpId(rs.getBigDecimal("EMPID"));
 		return emp;
 	}
 }

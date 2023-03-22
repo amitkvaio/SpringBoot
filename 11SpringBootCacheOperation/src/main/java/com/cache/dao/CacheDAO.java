@@ -10,21 +10,23 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.cache.model.Employee;
+
 @Repository
 public class CacheDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	private static String QUERY = "select * from Employee";
-	public List<Employee> getEmployeeDetails(){
+
+	public List<Employee> getEmployeeDetails() {
 		List<Employee> list = new ArrayList<Employee>();
-		List<Map<String,Object>> mapList=jdbcTemplate.queryForList(QUERY);
+		List<Map<String, Object>> mapList = jdbcTemplate.queryForList(QUERY);
 		for (Map<String, Object> map : mapList) {
 			Employee emp = new Employee();
-			emp.setFirstName((String)map.get("FIRSTNAME"));
-			emp.setLastName((String)map.get("LASTNAME"));
-			emp.setAge((BigDecimal)map.get("AGE"));
-			emp.setEmpId((BigDecimal)map.get("EMPLOYEEID"));
+			emp.setFirstName((String) map.get("FIRSTNAME"));
+			emp.setLastName((String) map.get("LASTNAME"));
+			emp.setAge((BigDecimal) map.get("AGE"));
+			emp.setEmpId((BigDecimal) map.get("EMPLOYEEID"));
 			list.add(emp);
 		}
 		return list;

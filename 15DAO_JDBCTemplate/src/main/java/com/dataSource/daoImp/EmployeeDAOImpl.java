@@ -1,14 +1,10 @@
 package com.dataSource.daoImp;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.dataSource.dao.EmployeeDAO;
@@ -16,8 +12,7 @@ import com.dataSource.model.Employee;
 import com.dataSource.model.EmployeeMapper;
 import com.dataSource.query.Query;
 
-@Repository
-@Component("EmployeeDAOImpl")
+@Repository("EmployeeDAOImpl")
 public class EmployeeDAOImpl implements EmployeeDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -28,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public List<Employee> getTotalEmployeeDetails() {
-		String selectQuery = query.getSql(Query.SELECT_TOTAL_EMPLOYEE);
+		String selectQuery = "select * from employee";
 		List<Employee> list=jdbcTemplate.query(selectQuery, new EmployeeMapper());
 		int fetchSize = jdbcTemplate.getFetchSize();
 		int maxRow = jdbcTemplate.getMaxRows();
@@ -54,9 +49,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Employee getEmployeeDetailsWithEmpId(int empId) {
+	public Employee getEmployeeDetailsWithEmpId(int empid) {
 		String sqlQuery = query.getSql(Query.SELECT_EMPOYEE_DETAILS_WTIH_EMPID);
-		Employee employee=jdbcTemplate.queryForObject(sqlQuery, new Object[]{empId}, new EmployeeMapper());
+		Employee employee=jdbcTemplate.queryForObject(sqlQuery, new Object[]{empid}, new EmployeeMapper());
 		return employee;
 	}
 
@@ -69,9 +64,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public Integer update(String firstName, int empId) {
+	public Integer update(String firstName, int empid) {
 		String updateQuery = query.getSql(Query.UPDATING_EMPLOYEE_DETAILS);
-		Integer updateCount =jdbcTemplate.update(updateQuery, new Object[] { firstName, empId });
+		Integer updateCount =jdbcTemplate.update(updateQuery, new Object[] { firstName, empid });
 		return updateCount;
 	}
 
