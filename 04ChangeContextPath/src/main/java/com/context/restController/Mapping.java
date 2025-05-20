@@ -11,3 +11,4 @@ public class Mapping {
 		return "Application context file got changed!!!";
 	}
 }
+//http://localhost:2025/contextPath/context

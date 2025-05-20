@@ -4,7 +4,7 @@ import java.net.URI;
 import java.security.Provider.Service;
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

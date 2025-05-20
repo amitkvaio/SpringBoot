@@ -2,8 +2,8 @@ package com.springboot.model;
 
 import java.util.Date;
 
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 
 public class User {
 	private Integer id;

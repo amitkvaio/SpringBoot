@@ -1,15 +1,15 @@
 package com.context.java;
 
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ChangeContextPath implements EmbeddedServletContainerCustomizer {
+public class ChangeContextPath implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 	@Override
-	public void customize(ConfigurableEmbeddedServletContainer container) {
+	public void customize(ConfigurableServletWebServerFactory  container) {
 		//To change the context path
-		container.setContextPath("/contextPath");
-		container.setPort(2025);
+		//container.setContextPath("/contextPath");
+		//container.setPort(2025);
 	}
 }

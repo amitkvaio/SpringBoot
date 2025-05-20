@@ -23,7 +23,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc11</artifactId>
+			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0</version>
 		</dependency>
 		<!-- Spring boot jdbc dependency -->
