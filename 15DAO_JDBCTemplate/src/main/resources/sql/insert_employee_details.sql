@@ -1,1 +1,1 @@
-INSERT INTO Employee VALUES (?,?,?,?)
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, empid) VALUES (?, ?, ?, ?)

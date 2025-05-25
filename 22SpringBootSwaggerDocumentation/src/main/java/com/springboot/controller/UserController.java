@@ -71,7 +71,8 @@ public class UserController {
 	}
 	
 	
-	
+	//http://localhost:2019/swagger-ui.html   ==> [Run with this URL to the details on the browser.]
+
 	
 	/*
 	 @RequestBody : Annotation indicating a method parameter should be bound to the body of the HTTP request. 

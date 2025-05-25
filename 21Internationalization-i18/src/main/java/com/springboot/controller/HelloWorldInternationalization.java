@@ -15,10 +15,17 @@ public class HelloWorldInternationalization {
 	@Autowired
 	private MessageSource messageSource;
 	
-	@GetMapping(value = "/hello-world-i18")
-	public String helloWorldInternationalization(
+	@GetMapping(value = "/hello-world-i18-english")
+	public String helloWorldInternationalization_english(
 			@RequestHeader(name = "Accept-Language", required = false) Locale locale) {
-		return messageSource.getMessage("welcome.message", null, "Default Message", locale);
+		return messageSource.getMessage("welcome.message", null, "Default Message", Locale.ENGLISH);
+	}
+	
+	
+	@GetMapping(value = "/hello-world-i18-japan")
+	public String helloWorldInternationalization_japan(
+			@RequestHeader(name = "Accept-Language", required = false) Locale locale) {
+		return messageSource.getMessage("welcome.message", null, "Default Message", Locale.FRANCE);
 	}
 	
 	/*

@@ -28,7 +28,7 @@ public class DataSourceController {
 		return dao.getTotalEmployeeDetails();
 	}
 	
-	@GetMapping(value="/int",produces = "application/json")
+	@GetMapping(value="/int")
 	public String getTotalEmployeeCount(){
 		return dao.getTotalEmployeeCountInInt();
 	}
