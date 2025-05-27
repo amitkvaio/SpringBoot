@@ -16,6 +16,7 @@ public class HealthInsuranceServiceImpl implements HealthInsuranceService {
 	@Override
 	public void registerEmployeeHealthInsurance(EmployeeHealthInsurance employeeHealthInsurance) {
 		healthInsuranceDao.registerEmployeeHealthInsurance(employeeHealthInsurance);
+		System.out.println(employeeHealthInsurance + " has successfully registered!!");
 	}
 
 	@Override

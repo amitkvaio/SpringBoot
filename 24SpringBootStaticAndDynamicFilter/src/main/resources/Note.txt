@@ -1,0 +1,23 @@
+I'm sending a GET request to our users resource and I'm getting this response back.
+Id, name, birthdate. Id, name, birthdate.
+Let's say, I don't want birthday to come in my response. How do I do that?
+That concept is called filtering.
+
+Static Filtering
+	Use Case:
+		You want to permanently exclude some fields from JSON response
+		@JsonIgnore — skips the field in JSON output.
+		@JsonProperty — customizes the JSON property name.
+
+		
+Dynamic Filtering
+****************
+Sometimes for some requests I would want to send these two fields alone and for other requests I would want to send these two fields.
+
+So, in specific requests I don’t want to send one. In specific request I don’t want to send field three.
+
+How do we be able to do that?
+****************************
+
+That's basically where the concept of dynamic filtering comes. With dynamic filtering we cannot configure filtering directly on the bean.
+we need to start configuring the filtering where they’re retrieving the values.

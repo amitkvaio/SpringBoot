@@ -1,4 +1,4 @@
-package com.springboot.controller;
+package com.springboot;
 
 
 import org.springframework.boot.SpringApplication;

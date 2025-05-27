@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import java.net.URI;
+import java.util.Date;
 import java.util.List;
 
 import jakarta.validation.Valid;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -43,16 +43,20 @@ public class UserController {
 		EntityModel<User> model = EntityModel.of(user);
 		//Build the link
 		WebMvcLinkBuilder linkToUsers = linkTo(methodOn(this.getClass()).retrievedAllUsers());
+		WebMvcLinkBuilder retrieveAUser = linkTo(methodOn(this.getClass()).retrieveUsers(id));
 		
 		//Adding linkToUsers to model
 		model.add(linkToUsers.withRel("all-users"));
+		model.add(retrieveAUser.withRel("retrieve-a-user"));
 		return model;
 	}
+	//http://localhost:2019/users/2
 	
 	// input - details for user
 	//output - Created and return the created URI
 	@PostMapping("/createUsers")
-	public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {
+	public ResponseEntity<Object> createUser() {
+		User user = new User(1, "RajaRaju", new Date());
 		userService.save(user);
 		//ResponseEntity<T>.created(location)
 		

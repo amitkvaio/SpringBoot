@@ -23,11 +23,24 @@ public class OrganzationServiceImpl implements OrganizationService {
 	@Transactional
 	public void joinOrganization(Employee employee, EmployeeHealthInsurance employeeHealthInsurance) {
 		employeeService.insertEmployee(employee);
+		System.out.println(employee + " has inserted!!");
 		if (employee.getEmpId().equals("emp1")) {
 			throw new RuntimeException("thowing exception to test transaction rollback");
 		}
 		healthInsuranceService.registerEmployeeHealthInsurance(employeeHealthInsurance);
-		//int x = 5/0;
+	}
+	
+	@Override
+	@Transactional
+	public void joinOrganization_throw_exception(Employee employee, EmployeeHealthInsurance employeeHealthInsurance) {
+		employeeService.insertEmployee(employee);
+		System.out.println(employee + " has inserted!!");
+		if (employee.getEmpId().equals("emp1")) {
+			throw new RuntimeException("thowing exception to test transaction rollback");
+		}
+		healthInsuranceService.registerEmployeeHealthInsurance(employeeHealthInsurance);
+		int x = 5/0;
+		System.out.println("Value of X ::" + x);
 	}
 
 	@Override
@@ -36,5 +49,7 @@ public class OrganzationServiceImpl implements OrganizationService {
 		employeeService.deleteEmployeeById(employee.getEmpId());
 		healthInsuranceService.deleteEmployeeHealthInsuranceById(employeeHealthInsurance.getEmpId());
 	}
+
+	
 }
 

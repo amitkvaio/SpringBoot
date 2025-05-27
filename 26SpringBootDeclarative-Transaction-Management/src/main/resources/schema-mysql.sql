@@ -12,3 +12,6 @@ CREATE TABLE employeeHealthInsurance (
   healthInsuranceSchemeName VARCHAR(100) NOT NULL,
   coverageAmount VARCHAR(100) NOT NULL
 );
+
+#https://www.javainuse.com/spring/boot-transaction
+#https://www.javainuse.com/spring/boot-jwt

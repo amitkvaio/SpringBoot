@@ -62,14 +62,23 @@ public class SpringBootDAO {
 	CREATE TABLE Employee (
 			FIRSTNAME VARCHAR(30) NOT NULL,
 			LASTNAME VARCHAR(30) NOT NULL,
-			AGE int(2),
-			EMPLOYEEID int(6)
+			AGE NUMBER(2),
+			EMPID NUMBER(6)
 			);
             
             
 	desc Employee;
-	insert into Employee values("amit","kumar",31,1030);
-	insert into Employee values("Niraj","kumar",27,1025);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Amit', 'Kumar', 31, 1030);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Niraj', 'Kumar', 27, 1025);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Ravi', 'Singh', 35, 1026);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Priya', 'Verma', 29, 1027);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Sneha', 'Sharma', 26, 1028);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Rahul', 'Yadav', 32, 1029);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Karan', 'Mehta', 30, 1031);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Pooja', 'Chauhan', 28, 1032);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Anjali', 'Rai', 33, 1033);
+INSERT INTO Employee (FIRSTNAME, LASTNAME, AGE, EMPID) VALUES ('Vikas', 'Gupta', 34, 1034);
+
 
 	alter table Employee modify EMPLOYEEID NUMERIC;
 	

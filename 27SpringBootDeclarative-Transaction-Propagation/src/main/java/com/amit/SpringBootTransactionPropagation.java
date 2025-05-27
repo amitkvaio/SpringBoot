@@ -14,6 +14,7 @@ import com.amit.service.OrganizationService;
 public class SpringBootTransactionPropagation {
 	@Autowired
 	EmployeeService employeeService;
+	
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringBootTransactionPropagation.class, args);
 		OrganizationService organizationService = context.getBean(OrganizationService.class);
@@ -23,7 +24,7 @@ public class SpringBootTransactionPropagation {
 		emp.setEmpName("emp1");
 
 		EmployeeHealthInsurance employeeHealthInsurance = new EmployeeHealthInsurance();
-		employeeHealthInsurance.setEmpId("emp1");
+		employeeHealthInsurance.setEmpId(emp.getEmpId());
 		employeeHealthInsurance.setHealthInsuranceSchemeName("premium");
 		employeeHealthInsurance.setCoverageAmount(20000);
 		organizationService.joinOrganization(emp, employeeHealthInsurance);

@@ -6,6 +6,7 @@ import com.amit.model.EmployeeHealthInsurance;
 public interface OrganizationService {
 
 	public void joinOrganization(Employee employee, EmployeeHealthInsurance employeeHealthInsurance);
+	public void joinOrganization_throw_exception(Employee employee, EmployeeHealthInsurance employeeHealthInsurance);
 
 	public void leaveOrganization(Employee employee, EmployeeHealthInsurance employeeHealthInsurance);
 

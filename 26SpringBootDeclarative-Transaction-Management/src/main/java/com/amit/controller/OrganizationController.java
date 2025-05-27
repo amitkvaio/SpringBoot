@@ -29,11 +29,26 @@ public class OrganizationController {
 		emp.setEmpName("Amit");
 
 		EmployeeHealthInsurance employeeHealthInsurance = new EmployeeHealthInsurance();
-		employeeHealthInsurance.setEmpId("one");
+		employeeHealthInsurance.setEmpId(emp.getEmpId());
 		employeeHealthInsurance.setHealthInsuranceSchemeName("premium");
 		employeeHealthInsurance.setCoverageAmount(20000);
 
 		organizationService.joinOrganization(emp, employeeHealthInsurance);
+		return "Registration has done successfully!!";
+	}
+	
+	@PostMapping( value="/join_throw_exception/")
+	public String joinOrganization_throw_exception() {
+		Employee emp = new Employee();
+		emp.setEmpId("Two");
+		emp.setEmpName("RajaRaju");
+
+		EmployeeHealthInsurance employeeHealthInsurance = new EmployeeHealthInsurance();
+		employeeHealthInsurance.setEmpId(emp.getEmpId());
+		employeeHealthInsurance.setHealthInsuranceSchemeName("premium");
+		employeeHealthInsurance.setCoverageAmount(100000);
+
+		organizationService.joinOrganization_throw_exception(emp, employeeHealthInsurance);
 		return "Registration has done successfully!!";
 	}
 
@@ -51,7 +66,7 @@ public class OrganizationController {
 		emp.setEmpId("one");
 
 		EmployeeHealthInsurance employeeHealthInsurance = new EmployeeHealthInsurance();
-		employeeHealthInsurance.setEmpId("one");
+		employeeHealthInsurance.setEmpId(emp.getEmpId());
 		organizationService.leaveOrganization(emp, employeeHealthInsurance);
 		return "Deletion has done successfully!!";
 	}
