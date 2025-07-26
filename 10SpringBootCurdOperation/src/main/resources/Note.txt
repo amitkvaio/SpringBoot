@@ -1,0 +1,69 @@
+/*
+
+http://localhost:8082/departments
+Post call
+{
+  "departmentName": "Computer Science",
+  "departmentAddress": "Building A, Block 3",
+  "departmentCode": "CS101"
+}
+
+
+
+http://localhost:8082/departments
+Post call
+{
+  "departmentName": "IT",
+  "departmentAddress": "Building B, Block 3",
+  "departmentCode": "CS102"
+}
+
+*/
+
+Access the H2 Databse
+http://localhost:8082/h2-console
+
+
+http://localhost:8082/departments
+Post call
+
+
+http://localhost:8082/departments
+GET call
+
+http://localhost:8082/departments/2
+PUT call
+{
+  "departmentName": "EC",
+  "departmentAddress": "Building A, Block 3",
+  "departmentCode": "CS103"
+}
+
+http://localhost:8082/departments/2
+DELETE Call
+
+
+TO-DO
+https://www.geeksforgeeks.org/java/how-to-call-or-consume-external-api-in-spring-boot/
+https://www.geeksforgeeks.org/java/upload-multiple-files-in-spring-boot-using-jpa-thymeleaf-multipart/
+https://www.geeksforgeeks.org/java/containerizing-java-applications-creating-a-spring-boot-app-using-dockerfile/
+https://www.geeksforgeeks.org/springboot/how-to-dockerize-a-spring-boot-application-with-maven/
+https://www.geeksforgeeks.org/java/validation-in-spring-boot/
+https://www.geeksforgeeks.org/java/spring-boot-difference-between-service-annotation-and-repository-annotation/
+https://www.geeksforgeeks.org/java/spring-boot-starter-parent/
+https://www.geeksforgeeks.org/java/spring-boot-starter-web/
+https://www.geeksforgeeks.org/java/multi-module-project-with-spring-boot/
+https://www.geeksforgeeks.org/java/spring-boot-packaging/
+https://www.geeksforgeeks.org/java/spring-boot-project-deployment-using-tomcat/
+https://www.geeksforgeeks.org/springboot/spring-boot-starter-test/
+https://www.geeksforgeeks.org/springboot/exception-handling-in-spring-boot/
+https://www.geeksforgeeks.org/java/spring-boot-file-handling/
+https://www.geeksforgeeks.org/springboot/spring-boot-logging/
+https://www.geeksforgeeks.org/springboot/spring-boot-cache-provider/
+https://www.geeksforgeeks.org/springboot/spring-boot-validation-using-hibernate-validator/
+https://www.geeksforgeeks.org/java/spring-boot-map-entity-to-dto-using-modelmapper/
+https://www.geeksforgeeks.org/springboot/spring-boot-sending-email-via-smtp/
+https://www.geeksforgeeks.org/springboot/spring-resttemplate/
+https://www.geeksforgeeks.org/java/dynamic-dropdown-from-database-using-spring-boot/
+Done : https://www.geeksforgeeks.org/springboot/spring-boot-architecture/
+https://www.geeksforgeeks.org/springboot/spring-boot-annotations/
