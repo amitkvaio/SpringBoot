@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.springboot.helloworld</groupId>
-	<artifactId>hello-world</artifactId>
+	<artifactId>01HelloWorld</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Hello World</name>
 	<description>Spring Boot Hello World Application</description>
