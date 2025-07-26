@@ -32,3 +32,8 @@ hs_err_pid*
 *.lst
 *.ist
 *.classpath
+
+# Ignore Eclipse/IDEA metadata
+.metadata/
+.idea/
+*.iml
