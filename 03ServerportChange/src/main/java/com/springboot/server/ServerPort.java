@@ -10,6 +10,6 @@ public class ServerPort implements TomcatConnectorCustomizer {
 	@Override
 	public void customize(Connector connector) {
 		//to change the port
-		connector.setPort(2050);
+		//connector.setPort(2050);
 	}
 }

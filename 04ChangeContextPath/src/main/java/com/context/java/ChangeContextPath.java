@@ -9,7 +9,7 @@ public class ChangeContextPath implements WebServerFactoryCustomizer<Configurabl
 	@Override
 	public void customize(ConfigurableServletWebServerFactory  container) {
 		//To change the context path
-		//container.setContextPath("/contextPath");
+		container.setContextPath("/contextPath");
 		//container.setPort(2025);
 	}
 }
